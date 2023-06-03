@@ -7,6 +7,11 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.1.0</version>
     </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-annotation-configuration</module>
+        <module>spring-annotation-resource</module>
+    </modules>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tomato</groupId>
@@ -21,5 +26,25 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <!-- maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
